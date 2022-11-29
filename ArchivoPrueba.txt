@@ -1,0 +1,9 @@
+main {
+    int var = 2;
+    if (var >= 1) {
+        var++;
+    } else {
+        var--;
+        char = "hola";
+    }
+}
