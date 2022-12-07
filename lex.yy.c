@@ -324,6 +324,7 @@ void yyfree ( void *  );
 /* Begin user sect3 */
 typedef flex_uint8_t YY_CHAR;
 
+
 FILE *yyin = NULL, *yyout = NULL;
 
 typedef int yy_state_type;

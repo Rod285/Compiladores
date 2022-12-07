@@ -9,39 +9,39 @@ l [a-zA-z]
 d [0-9]
 int yywrap();
 %%
-"int"		{return(258);}
-"float" 	{return(259);}
-"char"  	{return(260);}
-"main"  	{return(261);}
-"if"    	{return(262);}
-"else"  	{return(263);}
-"while" 	{return(264);}
-"do" 		{return(265);}
-"return"   	{return(266);}
-"for" 		{return(267);}
-"\n"   		{return(268);}
-";" 		{return(269);}
-"("   		{return(270);}
-")" 		{return(271);}
-"{"   		{return(272);}
-"}" 		{return(273);}
-">="		{return(274);}
-">"		    {return(275);}
-"<="		{return(276);}
-"<"		    {return(277);}
-"="		    {return(278);}
-"=="		{return(279);}
-"!="		{return(280);}
-"+"		{return(281);}
-"-"		{return(282);}
-"*"		{return(283);}
-"/"		{return(284);}
-{l}({l}|{d})*	{ap_id = Maneja_Id(Tabla, yytext);
+"int" {return(258);}
+"float" {return(259);}
+"char" {return(260);}
+"main" {return(261);}
+"if" {return(262);}
+"else" {return(263);}
+"while" {return(264);}
+"do" {return(265);}
+"return" {return(266);}
+"for" {return(267);}
+"\n" {return(268);}
+";" {return(269);}
+"(" {return(270);}
+")" {return(271);}
+"{" {return(272);}
+"}" {return(273);}
+">=" {return(274);}
+">" {return(275);}
+"<=" {return(276);}
+"<" {return(277);}
+"=" {return(278);}
+"==" {return(279);}
+"!=" {return(280);}
+"+" {return(281);}
+"-" {return(282);}
+"*" {return(283);}
+"/" {return(284);}
+{l}({l}|{d})* {ap_id = Maneja_Id(Tabla, yytext);
 		    return(285);}
-{d}+		{Valor_num = atoi(yytext);
+{d}+ {Valor_num = atoi(yytext);
 		    return(286);}
-\"(\\.|[^"\\])*\"	{return(287);}
-","		{return(288);}
+\"(\\.|[^"\\])*\" {return(287);}
+"," {return(288);}
 %%
 int yywrap(){
     return (1);

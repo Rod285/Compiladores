@@ -1,9 +1,8 @@
-int main () {
+
+main ( ) {
     int var = 2;
-    if (var >= 1) {
-        var++;
-    } else {
-        var--;
-        char = "hola";
+    if ( var >= 1 ) {
+        var = 0;
     }
+    char msg = "Hola"; 
 }

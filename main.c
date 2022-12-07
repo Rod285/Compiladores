@@ -1,4 +1,5 @@
 #include <stdio.h>
+extern int yyerror(char* cad);
 #include <string.h>
 #include <stdlib.h>
 #include "registro.h"
@@ -20,8 +21,6 @@ int Maneja_Id(struct Reg Tabla[100], char Id[50]);
 
 int Busca(struct Reg Tabla[100], char Id[50]);
 
-extern int yyerror(char *cad);
-
 int main(){
     int token;
     yyin = fopen("ArchivoPrueba.txt", "r");
@@ -32,7 +31,7 @@ int main(){
 }
 
 int yyerror(char *cad){
-    printf("Error: %s", cad);
+    printf("Error: %s\n", cad);
 }
 
 int Maneja_Id(struct Reg Tabla[100], char Id[50]){
