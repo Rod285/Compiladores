@@ -1,4 +1,4 @@
-main {
+int main () {
     int var = 2;
     if (var >= 1) {
         var++;
