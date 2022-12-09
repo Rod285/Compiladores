@@ -24,9 +24,10 @@ int Busca(struct Reg Tabla[100], char Id[50]);
 int main(){
     int token;
     yyin = fopen("ArchivoPrueba.txt", "r");
-    yyparse();
+    
     while(token=yylex()){
-	printf("El token encontrado es %d\n", token);
+        yyparse();
+	    printf("El token encontrado es %d\n", token);
     }
 }
 
