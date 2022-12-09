@@ -26,7 +26,7 @@ int main(){
     yyin = fopen("ArchivoPrueba.txt", "r");
     yyparse();
     while(token=yylex()){
-	printf("El token encontrado es %d\n", token);
+	    printf("El token encontrado es %d\n", token);
     }
 }
 
