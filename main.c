@@ -4,7 +4,7 @@ extern int yyerror(char* cad);
 #include <stdlib.h>
 #include "registro.h"
 #include "lex.yy.c"
-#include "archivo_especificacion.tab.c"
+#include "y.tab.c"
 
 //FILE *yyin = NULL;
 
