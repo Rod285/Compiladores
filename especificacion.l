@@ -41,6 +41,7 @@ int yywrap();
 {d}+ {Valor_num = atoi(yytext);
 		    return(286);}
 \"(\\.|[^"\\])*\" {return(287);}
+"," {return(288);}
 %%
 int yywrap(){
     return (1);

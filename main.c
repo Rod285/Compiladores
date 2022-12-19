@@ -1,7 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
 extern int yyerror(char* cad);
 #include <string.h>
-#include <stdlib.h>
 #include "registro.h"
 #include "lex.yy.c"
 #include "y.tab.c"
@@ -24,8 +24,9 @@ int Busca(struct Reg Tabla[100], char Id[50]);
 int main(){
     int token;
     yyin = fopen("ArchivoPrueba.txt", "r");
-    yyparse();
+    
     while(token=yylex()){
+        yyparse();
 	    printf("El token encontrado es %d\n", token);
     }
 }

@@ -27,8 +27,8 @@
 %token '/'	//'/'	
 %token id
 %token num
-%token cad
-%token 'q'	//,
+%token cade
+%token ','	//,
 %start PROGRAM
 %%
 PROGRAM : DECLS MAIN;
