@@ -1,0 +1,84 @@
+%token Int
+%token Float
+%token Char
+%token Main
+%token If
+%token Else
+%token While
+%token Do
+%token Return
+%token For
+%token salin      //\n
+%token pq	      //;
+%token parab	//(
+%token parci	//)
+%token llab 	//{
+%token llci 	//}
+%token mayig	//>=
+%token myr	      //>
+%token menig	//<=
+%token mnr  	//<
+%token igl	      //=
+%token iglog	//==
+%token dfrnt	//!= 
+%token smr  	//+
+%token rstr       //-
+%token mltpl	//*
+%token dvsn 	//'/'	
+%token ID
+%token num
+%token cade
+%token q          //,
+%start PROGRAM
+%%
+PROGRAM : CONSTANTES DECLARACIONES DECL_FUNCIONES FUN_PRINCIPAL {printf("programa correcto");};
+CONSTANTES : 
+           | CONSTANTES ID igl cade pq;
+DECLARACIONES : 
+              | DECLARACIONES DECL;
+DECL : Int LISTA_ID pq
+     | Char LISTA_ID pq;
+LISTA_ID : ID
+         | LISTA_ID q ID;
+DECL_FUNCIONES : 
+              | DECL_FUNCIONES FUN_DECL;
+FUN_PRINCIPAL : Main parab parci CUERPO;
+FUN_DECL : ENCABEZADO CUERPO;
+ENCABEZADO : Int ID parab ARGS parci
+           | Int ID parab parci
+           | Char ID parab ARGS parci
+           | Char ID parab parci;
+ARGS : ID
+     | ID q ARGS;
+CUERPO : llab DECL LISTA_INS llci;
+LISTA_INS : INS pq
+          | INS pq LISTA_INS;
+INS : ID igl EXP
+    | If parab COND parci INSTS Else INSTS
+    | If parab COND parci INSTS
+    | While parab COND parci
+    | Return parab EXP parci;
+INSTS : INS
+      | CUERPO;
+COND : EXP RELOP EXP;
+EXP : TERMINO 
+    | EXP ADOP TERMINO;
+TERMINO : FACTOR
+        | TERMINO MULOP FACTOR;
+FACTOR : ID
+       | ID parab parci
+       | ID parab LISTA_EXP parci
+       | num
+       | parab EXP parci;
+LISTA_EXP : EXP
+          |EXP q LISTA_EXP;
+RELOP : mayig
+      | menig
+      | myr
+      | mnr
+      | igl
+      | dfrnt;
+ADOP : smr
+     |rstr;
+MULOP : mltpl
+      | dvsn; 

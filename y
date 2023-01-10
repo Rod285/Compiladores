@@ -39,4 +39,4 @@ LISTA_ID : ID
          | LISTA_ID q ID;
 MAIN : Main parab parci llab DECLS INS llci;
 INS : ID igl EXP pq;
-EXP : ID smr ID;
+EXP : ID smr ID{printf("Programa correcto");};
