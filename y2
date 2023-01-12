@@ -29,6 +29,11 @@
 %token num
 %token cade
 %token q          //,
+%union{
+    int ENTERO;
+    char STRING[15];
+    char FUNCION[15];
+}
 %start PROGRAM
 %%
 PROGRAM : CONSTANTES DECLARACIONES DECL_FUNCIONES FUN_PRINCIPAL {printf("programa correcto");};
@@ -44,10 +49,9 @@ DECL_FUNCIONES :
               | DECL_FUNCIONES FUN_DECL;
 FUN_PRINCIPAL : Main parab parci CUERPO;
 FUN_DECL : ENCABEZADO CUERPO;
-ENCABEZADO : Int ID parab ARGS parci
-           | Int ID parab parci
-           | Char ID parab ARGS parci
-           | Char ID parab parci;
+ENCABEZADO : Int ID parab F;
+F : ARGS parci
+  | parci;
 ARGS : ID
      | ID q ARGS;
 CUERPO : llab DECL LISTA_INS llci;

@@ -490,7 +490,7 @@ char *yytext;
 #line 2 "especificacion.l"
     #include "registro.h"
     int Valor_num = 0;
-    int ap_id = 0;
+    struct Reg *ap_id, ap_fun;
     extern struct Reg Tabla[100]; 
     extern int Maneja_Id(struct Reg Tabla[100], char Id[50]);  
 #line 497 "lex.yy.c"
@@ -909,7 +909,7 @@ YY_RULE_SETUP
 case 28:
 YY_RULE_SETUP
 #line 39 "especificacion.l"
-{ap_id = Maneja_Id(Tabla, yytext);
+{/*ap_id = */Maneja_Id(Tabla, yytext);
 		    return(285);}
 	YY_BREAK
 case 29:

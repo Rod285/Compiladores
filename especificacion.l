@@ -1,7 +1,7 @@
 %{
     #include "registro.h"
     int Valor_num = 0;
-    int ap_id = 0;
+    struct Reg *ap_id, ap_fun;
     extern struct Reg Tabla[100]; 
     extern int Maneja_Id(struct Reg Tabla[100], char Id[50]);  
 %}
@@ -36,7 +36,7 @@ int yywrap();
 "-" {return(282);}
 "*" {return(283);}
 "/" {return(284);}
-{l}({l}|{d})* {ap_id = Maneja_Id(Tabla, yytext);
+{l}({l}|{d})* {/*ap_id = */Maneja_Id(Tabla, yytext);
 		    return(285);}
 {d}+ {Valor_num = atoi(yytext);
 		    return(286);}
