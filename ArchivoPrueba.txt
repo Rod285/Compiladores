@@ -10,5 +10,8 @@ Int fun(y, z){
 
 Main() {
     Int var1, var2;
+    If(w < 5)
+        Return (10);
+    
     var3 = var1 + var2;
 }

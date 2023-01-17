@@ -3,5 +3,6 @@
 struct Reg{
 char Nombre[50];
 int tipo;
+int num_args;
 };
 #endif

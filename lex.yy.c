@@ -492,9 +492,11 @@ char *yytext;
     int Valor_num = 0;
     struct Reg *ap_id, ap_fun;
     extern struct Reg Tabla[100]; 
-    extern int Maneja_Id(struct Reg Tabla[100], char Id[50]);  
-#line 497 "lex.yy.c"
-#line 498 "lex.yy.c"
+    extern int Maneja_Id(char Id[50]);
+    extern int declaracion;
+    extern int EsGlobal;  
+#line 499 "lex.yy.c"
+#line 500 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -711,9 +713,9 @@ YY_DECL
 		}
 
 	{
-#line 11 "especificacion.l"
+#line 13 "especificacion.l"
 
-#line 717 "lex.yy.c"
+#line 719 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -772,169 +774,169 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 12 "especificacion.l"
+#line 14 "especificacion.l"
 {return(258);}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 13 "especificacion.l"
+#line 15 "especificacion.l"
 {return(259);}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 14 "especificacion.l"
+#line 16 "especificacion.l"
 {return(260);}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 15 "especificacion.l"
+#line 17 "especificacion.l"
 {return(261);}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 16 "especificacion.l"
+#line 18 "especificacion.l"
 {return(262);}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 17 "especificacion.l"
+#line 19 "especificacion.l"
 {return(263);}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 18 "especificacion.l"
+#line 20 "especificacion.l"
 {return(264);}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 19 "especificacion.l"
+#line 21 "especificacion.l"
 {return(265);}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 20 "especificacion.l"
+#line 22 "especificacion.l"
 {return(266);}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 21 "especificacion.l"
+#line 23 "especificacion.l"
 {return(267);}
 	YY_BREAK
 case 11:
 /* rule 11 can match eol */
 YY_RULE_SETUP
-#line 22 "especificacion.l"
+#line 24 "especificacion.l"
 {return(268);}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 23 "especificacion.l"
+#line 25 "especificacion.l"
 {return(269);}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 24 "especificacion.l"
+#line 26 "especificacion.l"
 {return(270);}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 25 "especificacion.l"
+#line 27 "especificacion.l"
 {return(271);}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 26 "especificacion.l"
+#line 28 "especificacion.l"
 {return(272);}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 27 "especificacion.l"
+#line 29 "especificacion.l"
 {return(273);}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 28 "especificacion.l"
+#line 30 "especificacion.l"
 {return(274);}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 29 "especificacion.l"
+#line 31 "especificacion.l"
 {return(275);}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 30 "especificacion.l"
+#line 32 "especificacion.l"
 {return(276);}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 31 "especificacion.l"
+#line 33 "especificacion.l"
 {return(277);}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 32 "especificacion.l"
+#line 34 "especificacion.l"
 {return(278);}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 33 "especificacion.l"
+#line 35 "especificacion.l"
 {return(279);}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 34 "especificacion.l"
+#line 36 "especificacion.l"
 {return(280);}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 35 "especificacion.l"
+#line 37 "especificacion.l"
 {return(281);}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 36 "especificacion.l"
+#line 38 "especificacion.l"
 {return(282);}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 37 "especificacion.l"
+#line 39 "especificacion.l"
 {return(283);}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 38 "especificacion.l"
+#line 40 "especificacion.l"
 {return(284);}
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 39 "especificacion.l"
-{/*ap_id = */Maneja_Id(Tabla, yytext);
+#line 41 "especificacion.l"
+{/*ap_id =*/ Maneja_Id(yytext);
 		    return(285);}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 41 "especificacion.l"
+#line 43 "especificacion.l"
 {Valor_num = atoi(yytext);
 		    return(286);}
 	YY_BREAK
 case 30:
 /* rule 30 can match eol */
 YY_RULE_SETUP
-#line 43 "especificacion.l"
+#line 45 "especificacion.l"
 {return(287);}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 44 "especificacion.l"
+#line 46 "especificacion.l"
 {return(288);}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 45 "especificacion.l"
+#line 47 "especificacion.l"
 ECHO;
 	YY_BREAK
-#line 938 "lex.yy.c"
+#line 940 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1939,7 +1941,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 45 "especificacion.l"
+#line 47 "especificacion.l"
 
 int yywrap(){
     return (1);
